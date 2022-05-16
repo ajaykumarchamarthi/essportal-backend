@@ -120,7 +120,7 @@ exports.forgotpassword = catchAsync(async (req, res, next) => {
   await user.save({ validateBeforeSave: false });
 
   try {
-    const resetUrl = ``;
+    const resetUrl = `https://essportal.netlify.app/resetpassword/${resetToken}`;
     await new Email(user, resetUrl).sendPasswordReset();
 
     res.status(200).json({
