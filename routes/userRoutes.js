@@ -14,11 +14,6 @@ router.post(
 );
 router.post("/forgotpassword", authController.forgotpassword);
 
-router.get(
-  "/getAllUsers",
-  authController.protect,
-  authController.restrictionTo("admin", "manager"),
-  userController.getAllUsers
-);
+router.get("/getAllUsers", authController.protect, userController.getAllUsers);
 
 module.exports = router;
