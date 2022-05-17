@@ -16,7 +16,6 @@ router.patch(
 router.get(
   "/getAllLeaves",
   authController.protect,
-  authController.restrictionTo("manager"),
   leaveController.getAllLeaves
 );
 
